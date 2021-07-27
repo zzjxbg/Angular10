@@ -1,0 +1,33 @@
+<div>
+  <h1>angular模板里面绑定数据</h1>
+
+  <div class="title">{{title}}</div>
+  {{userinfo.username}}
+  {{message}}
+
+  <h1>angular模板里面绑定属性</h1>
+   <div title='提示'>测试</div>
+   <div [title]="title">
+     属性
+   </div>
+
+   <div [title]="title">
+     {{message}}
+   </div>
+
+  <h1>angular模板里面绑定Html</h1>
+  <span [innerHTML]='content'></span>
+
+  <h1>angular模板里面做简单运算</h1>
+    1+2={{1+2}}
+  <br/>
+
+  <h1>数据循环</h1>
+
+  <ul>
+    <li *ngFor="let item of list;let key=index">{{key}}--{{item}}</li>
+  </ul>
+
+  <br/>
+  我是新闻页
+</div>

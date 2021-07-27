@@ -1,1 +1,69 @@
-<p>我是首页</p>
+<h2>我是首页</h2>
+
+<h1>引入图片</h1>
+
+<img src="assets/images/img-mv.png">
+
+<img [src]='picUrl'>
+
+<h1>条件判断 ngIf</h1>
+
+<div *ngIf="flag">
+  <img src="assets/images/img-mv.png">
+</div>
+<div *ngIf="!flag">
+  <img [src]='picUrl'>
+</div>
+
+<h1>条件判断语句 *ngSwitch</h1>
+<div [ngSwitch]="orderStatus">
+  <p *ngSwitchCase="1">
+    表示已经支付
+  </p>
+  <p *ngSwitchCase="2">
+    支付并且确认订单
+  </p>
+  <p *ngSwitchCase="3">
+    表示已经发货
+  </p>
+  <p *ngSwitchCase="4">
+    表示已经收货
+  </p>
+  <p *ngSwitchDefault>
+    无效订单
+  </p>
+</div>
+
+<h1>属性[ngClass]</h1>
+<div class="red">ngclass</div>
+<div [class]="{'blue':flag,'red':!flag}">ngClass演示</div>
+
+<strong>循环数组，让数组的第一个元素的样式为red ,第二个为orange,第三个为blue</strong>
+<ul>
+  <li *ngFor="let item of list;let key=index;" [ngClass]="{'red':key==0,'orange':key==1,'blue':key==2}">
+    {{key}}---{{item}}
+  </li>
+</ul>
+
+<h1>属性[ngStyle]</h1>
+<p [ngStyle]="{'color':colorStr,'background':'#ccc'}">我是一个p标签</p>
+
+<h1>管道</h1>
+{{today | date:'yyyy-MM-dd HH:mm ss'}} <br/>
+{{today}}
+
+<h1>事件(click)</h1>
+<button (click)="run()">执行事件</button> <br/>
+{{message}}
+<button (click)="setData($event)">执行方法改变属性里面的数据</button>
+
+<h1>表单事件(click)</h1>
+keyDown<input type="text" (keydown)="keyDown($event)" />
+
+keyUp<input type="text" (keyup)="keyUp($event)" />
+
+<h1>双向数据绑定</h1>
+<input type="text" [(ngModel)]="keyword">
+{{keyword}}
+
+<button (click)="changeKeyWord($event)">改变keyword的值</button>

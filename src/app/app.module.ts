@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { NewsComponent } from './components/news/news.component';
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   //申请组件,当前运行项目的组件
@@ -14,7 +15,8 @@ import { NewsComponent } from './components/news/news.component';
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    NewsComponent
+    NewsComponent,
+    FormComponent
   ],
   //引入当前运行的模块
   imports: [

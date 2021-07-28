@@ -10,6 +10,7 @@ import { NewsComponent } from './components/news/news.component';
 import { FormComponent } from './components/form/form.component';
 import { SearchComponent } from './components/search/search.component';
 import {StorageService} from "./services/storage.service";
+import { TodolistComponent } from './components/todolist/todolist.component';
 
 @NgModule({
   //申请组件,当前运行项目的组件
@@ -19,7 +20,8 @@ import {StorageService} from "./services/storage.service";
     HomeComponent,
     NewsComponent,
     FormComponent,
-    SearchComponent
+    SearchComponent,
+    TodolistComponent
   ],
   //引入当前运行的模块
   imports: [

@@ -1,0 +1,32 @@
+<h2>todoList</h2>
+<div class="box-normal">
+  <input type="text" class="form_input" type="text" [(ngModel)]="keyword" (keyup)="doAdd($event)" />
+  <hr>
+  <div [hidden]="showKKK">
+    hello
+  </div>
+
+  <h3>待办事项 todolist</h3>
+  <!-- {{todolist | json}} -->
+  <ul class="result-list">
+    <li *ngFor="let item of todolist;let key=index;" [hidden]="item.status">
+        <span>
+            <!-- {{item.disabled}} -->
+          <input type="checkbox" [(ngModel)]="item.status" (change)="checkboxChage()" />
+          <input type="text" [hidden]="item.disabled"  [(ngModel)]="item.title"  (blur)= 'updateTitle($event,item)' >
+          <em [hidden]="!item.disabled" (click)="updateTitle($event,item)">{{item.title}} </em>
+
+        </span>
+      <button (click)="deleteData(key)">X</button>
+    </li>
+  </ul>
+  <h3>已完成事项</h3>
+  <ul class="result-list">
+    <li *ngFor="let item of todolist;let key=index;" [hidden]="!item.status">
+          <span>
+            <input type="checkbox" [(ngModel)]="item.status" />  {{item.title}}
+          </span>
+      <button (click)="deleteData(key)">X</button>
+    </li>
+  </ul>
+</div>

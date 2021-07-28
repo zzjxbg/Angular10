@@ -1,0 +1,17 @@
+<h2>京东搜索</h2>
+
+
+<div class="box-normal">
+
+  <input type="text" class="form_input" [(ngModel)]="keyword">
+  <button (click)="doSearch()">搜索</button>
+
+  <p class="sub-title">历史记录</p>
+
+  <ul class="result-list">
+    <li *ngFor="let item of historyList;let key=index">
+      {{item}}
+      <button (click)="deleteHistory(key)">X</button>
+    </li>
+  </ul>
+</div>

@@ -8,6 +8,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { NewsComponent } from './components/news/news.component';
 import { FormComponent } from './components/form/form.component';
+import { SearchComponent } from './components/search/search.component';
+import {StorageService} from "./services/storage.service";
 
 @NgModule({
   //申请组件,当前运行项目的组件
@@ -16,7 +18,8 @@ import { FormComponent } from './components/form/form.component';
     HeaderComponent,
     HomeComponent,
     NewsComponent,
-    FormComponent
+    FormComponent,
+    SearchComponent
   ],
   //引入当前运行的模块
   imports: [
@@ -25,7 +28,7 @@ import { FormComponent } from './components/form/form.component';
     FormsModule
   ],
   //定义服务
-  providers: [],
+  providers: [StorageService],
   bootstrap: [AppComponent] //引导AppModule来启动应用
 })
 export class AppModule { }

@@ -1,0 +1,16 @@
+<p>news works!</p>
+<!--<a [routerLink]="['/newsdetail']" routerLinkActive="router-link-active">-->
+<!--  新闻详情-->
+<!--</a>-->
+
+<!--url?aid=1-->
+<ul>
+  <li *ngFor="let item of newsList; let key = index;">
+<!--    get路由传参,问号传参-->
+<!--    queryParams这个属性是固定的-->
+    <a [routerLink]="['/newsdetail']" [queryParams]="{aid:item.id}">{{key}}--{{item.name}}</a>
+  </li>
+</ul>
+
+<!--js跳转-->
+<button type="button" (click)="gotoDetail($event)" tag="1">新闻详情</button>

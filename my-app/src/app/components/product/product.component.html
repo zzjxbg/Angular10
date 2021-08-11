@@ -1,0 +1,16 @@
+<p>product works!</p>
+
+
+<!-- 路径传参 -->
+<ul>
+  <li *ngFor="let item of productList; let key = index;">
+
+    <!-- 动态路由传参 ，下面2种方式都可以-->
+    <!-- /product/detail/1 -->
+    <!-- <a [routerLink]="['/product/detail/'+item.id]" >{{key}}--{{item.name}}</a>  -->
+    <a [routerLink]="['/product/detail/',item.id]" >{{key}}--{{item.name}}</a>
+  </li>
+</ul>
+
+
+<button type="button" (click)='gotoDetail($event)' tag='1'>跳转product到详情</button>

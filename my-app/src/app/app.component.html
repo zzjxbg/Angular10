@@ -8,5 +8,12 @@
 <!--演示异步数据-->
 <!--<app-home></app-home>-->
 
-<app-http></app-http>
+<!--<app-http></app-http>-->
 <router-outlet></router-outlet>
+
+<div class="header">
+  <a routerLink="/home" routerLinkActive="actived">首页</a>
+  <a routerLink="/http" routerLinkActive="actived">请求</a>
+  <a [routerLink]="['/news']" routerLinkActive="actived">新闻</a>
+  <a [routerLink]="['/product']" routerLinkActive="actived" >产品</a>
+</div>

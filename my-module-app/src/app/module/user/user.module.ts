@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UserComponent } from './user.component';
 import { AddressComponent } from './components/address/address.component';
 import { OrderComponent } from './components/order/order.component';
-
+import {UserRoutingModule} from "./user-routing.module";
 
 
 @NgModule({
@@ -18,7 +18,8 @@ import { OrderComponent } from './components/order/order.component';
     AddressComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    UserRoutingModule
   ]
 })
 export class UserModule { }
